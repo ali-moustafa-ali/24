@@ -8,15 +8,12 @@ float ReadSquareSide(float& side)
 {
     cout << "Enter square side: ";
     cin >> side;
-
     return side;
 }
 
 
 float CircleAreaInscribedInSquare(float A)
 {
-    
-
     float Area = (M_PI * pow(A, 2)) / 4;
 
     return Area;
