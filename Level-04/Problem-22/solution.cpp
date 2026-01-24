@@ -20,10 +20,10 @@ isoscelesTriangle readIsoscelesTriangleDimensions(isoscelesTriangle& triangle)
 }
 float CircleAreaInscribedInIsoscelesTriangle(isoscelesTriangle triangle)
 {
-    float height = sqrt(pow(triangle.side, 2) - pow(triangle.base / 2, 2));
-    float radius = (triangle.base * height) / (2 * (triangle.base + 2 * height));
-    float Area = M_PI * pow(radius, 2);
-    return Area;
+    float s = triangle.side;
+    float b = triangle.base;
+    float areaTriangle = M_PI * pow(b, 2) / 4  * ((2 * s - b) /(2* s + b));
+  return areaTriangle;
 }
 void printResult(float Area)
 {
@@ -34,7 +34,6 @@ int main()
 {
     isoscelesTriangle triangle;
     readIsoscelesTriangleDimensions(triangle);
-    float area = CircleAreaInscribedInIsoscelesTriangle(triangle);
-    printResult(area);
+    printResult(CircleAreaInscribedInIsoscelesTriangle(triangle));
     return 0;
 }
