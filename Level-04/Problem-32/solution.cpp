@@ -30,7 +30,7 @@ int power(int base, int exponent)
 int main()
 {
     int n, m;
-    int result = power(readn(n), readm(m)); // excution readm first then readn, because of the right to left associativity of function calls
+    int result = power(readn(n), readm(m));
     cout << n << " raised to the power of " << m << " is: " << result << endl;
     return 0;
 }
