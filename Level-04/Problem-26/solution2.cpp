@@ -8,10 +8,10 @@ void readNumber(int& n)
     cin >> n;
 }
 
-// print numbers from n to 1 using 3 different loops: for, while, do-while using function 
+// print numbers from 1 to n using 3 different loops: for, while, do-while using function 
 void printNumbersUsingForLoop(int n) // using if i know range of loop
 {
-    for(int i = n; i >= 1; i--)
+    for(int i = 1; i <=n; i++)
     {
         cout << i << endl;
     };
@@ -19,21 +19,21 @@ void printNumbersUsingForLoop(int n) // using if i know range of loop
 }
 void printNumbersUsigWhileLoop(int n) // using if i dont know range of loop
 {
-    int i = n;
-    while(i >= 1)
+    int i = 0;
+    while(i <= n) 
     {
-        cout << i << endl;
-        i--;
+        i++; // this wrong place before cout, because it will print from 0 to n+1
+        cout << i << endl; 
     }
     cout << endl;
 }
 void printNumbersUsingDoWhileLoop(int n) // using if i want to execute loop at least once
 {
-    int i = n;
+    int i = 0;
   do {
+    i++; // this wrong place before cout, because it will print from 0 to n+1
     cout << i << endl;
-    i--;
-  } while (i >= 1);
+  } while (i <= n);
   cout << endl;
 }
 

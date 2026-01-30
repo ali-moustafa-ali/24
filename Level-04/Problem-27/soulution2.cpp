@@ -19,21 +19,22 @@ void printNumbersUsingForLoop(int n) // using if i know range of loop
 }
 void printNumbersUsigWhileLoop(int n) // using if i dont know range of loop
 {
-    int i = n;
-    while(i >= 1)
+    int i = n + 1;
+    while(i > 1)
     {
+        i--;    
         cout << i << endl;
-        i--;
+      
     }
     cout << endl;
 }
 void printNumbersUsingDoWhileLoop(int n) // using if i want to execute loop at least once
 {
-    int i = n;
+    int i = n + 1   ;
   do {
-    cout << i << endl;
     i--;
-  } while (i >= 1);
+    cout << i << endl;
+  } while (i > 1);
   cout << endl;
 }
 

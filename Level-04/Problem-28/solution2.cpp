@@ -2,22 +2,32 @@
 #include <string>
 #include <cmath>
 using namespace std;
+enum evenOrodd { even, odd };
+
 void readNumber(int& n)
 {
     cout << "Enter a positive integer n: ";
     cin >> n;
 }
 
+evenOrodd checkEvenOrOdd(int n)
+{
+    if (n % 2 == 0)
+        return even;
+    else
+        return odd;
+}
+
+
+
 // sum odd numbers from 1 to n using 3 different loops: for, while, do-while using function 
     int sumOddNumbersUsingForLoop(int n) // using if i know range of loop
     {
-        int sum = 0; /* You must assign an initial value when you declare a variable.
-        must initialize sum to 0, because garbage value may be there, when you */ 
-        
-        for(int i = 1; i <= n; i+=2) // i+=2 = i = i + 2 // increment by 2 to get odd numbers
+        int sum = 0;
+        for(int i =1; i<=n; i++) 
         {
-            sum += i; // sum = sum + i.  
-
+            if (checkEvenOrOdd(i) == odd)
+            sum += i; // sum = sum + i
         };
         return sum;
     }
@@ -27,8 +37,15 @@ int sumOddNumbersUsigWhileLoop(int n) // using if i dont know range of loop
     int i = 1;
     while(i <= n)
     {
-        sum += i;
-        i += 2;
+
+        if (checkEvenOrOdd(i) == odd)
+        {
+            sum += i;
+            i++;
+        }
+      
+            i++;
+      
     }
     return sum;
 }
@@ -37,8 +54,14 @@ int sumOddNumbersUsingDoWhileLoop(int n) // using if i want to execute loop at l
     int sum = 0;
     int i = 1;
   do {
-    sum += i;
-    i += 2;
+    if (checkEvenOrOdd(i) == odd)
+    {
+        sum += i;
+        i++;
+    }
+    
+        i++;
+
   } while (i <= n);
   return sum;
 }       
